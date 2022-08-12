@@ -17,7 +17,7 @@ def hello_world():
 
 @app.route("/get-price/<ticker>")
 def get_price(ticker):
-    url = f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{ticker}?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
+    url = f"https://query2.finance.yahoo.com/v11/finance/quoteSummary/{ticker}?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
     response = requests.get(url)
     company_info = response.json()
     app.logger.info(f"Requested ticker: {ticker}")
