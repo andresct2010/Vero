@@ -27,7 +27,9 @@ def price():
     url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
     r = requests.get(url)
     result =r.json()
-    print(result)
+    price = result['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw']
+    return(price)
+    
 
 
 if __name__ == '__main__':
