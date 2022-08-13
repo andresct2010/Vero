@@ -28,7 +28,6 @@ def price():
     r = requests.get(url)
     result =r.json()
     print(result)
-    return (result)
 
 
 if __name__ == '__main__':
