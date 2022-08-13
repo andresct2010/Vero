@@ -15,20 +15,20 @@ def hello_world():
     return "<p>Hello, World! Verooo PRUEBA 3</p>"
 
 
-@app.route("/get-price")
-def get_price():
-    url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
-    response = requests.get(url)
-    result =response.json()
-    print(result)
-
-@app.route("/price")
-def price():   
-    url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
+@app.route("/price/<ticker>")
+def price(ticker : str):   
+    url = f"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval=5min&apikey=demo"
     r = requests.get(url)
     result =r.json()
+    return result
 
-    return ("<p>"+ result+"</p>")
+
+@app.route("/moneda/<ticker>")
+def moneda(ticker : str):   
+    url = f"https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol={ticker}&to_symbol=USD&interval=5min&apikey=demo"
+    r = requests.get(url)
+    result =r.json()
+    return result
     
 
 
