@@ -25,8 +25,8 @@ def get_price():
 @app.route("/price")
 def price():
     url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
-    response = requests.get(url)
-    result =response.json()
+    r = requests.get(url)
+    result =r.json()
     print(result)
 
 
