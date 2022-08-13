@@ -22,7 +22,12 @@ def get_price():
     result =response.json()
     print(result)
 
-   
+@app.route("/price")
+def price():
+    url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
+    response = requests.get(url)
+    result =response.json()
+    print(result)
 
 
 if __name__ == '__main__':
