@@ -23,11 +23,7 @@ def get_price():
     print(result)
 
 @app.route("/price")
-def price():
-    url = "https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
-    r = requests.get(url)
-    result =r.json()
-    price = result['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw']
+def price():   
     return "<p>Hello, World! Verooo PRUEBA 3</p>"
     
 
