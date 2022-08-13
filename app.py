@@ -28,7 +28,7 @@ def price():
     r = requests.get(url)
     result =r.json()
     price = result['quoteSummary']['result'][0]['price']['regularMarketPrice']['raw']
-    return ("<p>Hello, World! Verooo PRUEBA 3</p>")
+    return "<p>Hello, World! Verooo PRUEBA 3</p>"
     
 
 
