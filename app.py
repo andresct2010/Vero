@@ -15,7 +15,7 @@ def hello_world():
     return "<p>Hello, World! Verooo PRUEBA 2</p>"
 
 
-@app.route("/get-price/<ticker>")
+@app.route("/get-price")
 def get_price():
     url = f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/MSFT?modules=price%2CsummaryDetail%2CpageViews%2CfinancialsTemplate"
     response = requests.get(url)
